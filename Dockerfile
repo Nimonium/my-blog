@@ -33,4 +33,4 @@ ENV PORT=10000
 EXPOSE 10000
 
 # Start PHP's built-in server
-CMD php artisan migrate --force && php -S 0.0.0.0:$PORT -t public/
+CMD php artisan storage:link && php artisan migrate --force && php -S 0.0.0.0:$PORT -t public/
