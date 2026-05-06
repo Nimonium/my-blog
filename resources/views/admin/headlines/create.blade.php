@@ -1,0 +1,5 @@
+@extends('layouts.admin')
+@section('content')
+<div class="card"><div class="card-header"><h4>Add Headline</h4></div><div class="card-body">
+<form action="{{ route('admin.headlines.store') }}" method="POST">@csrf <div class="mb-3"><label class="form-label">Title</label><input type="text" name="title" class="form-control" value="{{ $item->title ?? old('title') }}" required></div><div class="mb-3"><label class="form-label">Url</label><input type="text" name="url" class="form-control" value="{{ $item->url ?? old('url') }}" required></div><div class="mb-3 form-check"><input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" class="form-check-input" value="1" {{ (isset($item) && $item->is_active) ? 'checked' : '' }}><label class="form-check-label">Is_active</label></div> <div class="mb-3"><label class="form-label">Scheduled Publish Date (Optional)</label><input type="datetime-local" name="published_at" class="form-control" value="{{ old('published_at') }}"></div><button type="submit" class="btn btn-success">Save</button></form>
+</div></div>@endsection

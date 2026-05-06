@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class Headline extends Model { protected $fillable = ["title", "url", "is_active", "published_at"]; protected $casts = ["published_at" => "datetime"]; }

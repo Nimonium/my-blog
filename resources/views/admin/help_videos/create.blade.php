@@ -1,0 +1,5 @@
+@extends('layouts.admin')
+@section('content')
+<div class="card"><div class="card-header"><h4>Add HelpVideo</h4></div><div class="card-body">
+<form action="{{ route('admin.help_videos.store') }}" method="POST">@csrf <div class="mb-3"><label class="form-label">Title</label><input type="text" name="title" class="form-control" value="{{ $item->title ?? old('title') }}" required></div><div class="mb-3"><label class="form-label">Video_url</label><input type="text" name="video_url" class="form-control" value="{{ $item->video_url ?? old('video_url') }}" required></div> <div class="mb-3"><label class="form-label">Scheduled Publish Date (Optional)</label><input type="datetime-local" name="published_at" class="form-control" value="{{ old('published_at') }}"></div><button type="submit" class="btn btn-success">Save</button></form>
+</div></div>@endsection

@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class HelpVideo extends Model { protected $fillable = ["title", "video_url", "published_at"]; protected $casts = ["published_at" => "datetime"]; }
